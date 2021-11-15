@@ -1,33 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <conio.h>
+#include "PersonArray.h"
 #include "Util.h"
 
-int main() {
-    int run = 1;
-    while (run) {
-        Menu();
-        puts("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì‹œì˜¤:");
-        char c = getchar(); getchar();
-        switch (c) {
-        case '1':
-            printf("ê¸°ëŠ¥ 1\n");
-            break;
-        case '2':
-            printf("ê¸°ëŠ¥ 2\n");
-            break;
-        case '3':
-            printf("ê¸°ëŠ¥ 3\n");
-            break;
-        case '4':
-            printf("ê¸°ëŠ¥ 4\n");
-            break;
-        case '5':
-            printf("ê¸°ëŠ¥ 5\n");
-            break;
-        case '0':
-            run = 0;
-            break;
-        }
-    }
+int main()
+{
+	PersonArray pa;
+	int run = 1;
+	InitPersonArray(&pa);
+
+	while (run)
+	{
+		Menu();
+		puts("¸Ş´º¸¦ ¼±ÅÃÇÏ½Ã¿À:");
+
+		char c = _getch();
+		switch (c)
+		{
+		case '1':
+			AddPersonArray(&pa);
+			break;
+		case '2':
+			PrintPersonArray(&pa);
+			break;
+		case '3':
+			printf("±â´É 3\n");
+			break;
+		case '4':
+			printf("±â´É 4\n");
+			break;
+		case '5':
+			printf("±â´É 5\n");
+			break;
+		case '0':
+			run = 0;
+			break;
+		}
+	}
+
+	UninitPersonArray(&pa);
 }
