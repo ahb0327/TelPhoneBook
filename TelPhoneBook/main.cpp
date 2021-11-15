@@ -1,14 +1,33 @@
-//
-//  main.cpp
-//  TelPhoneBook
-//
-//  Created by Pdom on 2021/11/15.
-//
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Util.h"
 
-#include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+int main() {
+    int run = 1;
+    while (run) {
+        Menu();
+        puts("메뉴를 선택하시오:");
+        char c = getchar(); getchar();
+        switch (c) {
+        case '1':
+            printf("기능 1\n");
+            break;
+        case '2':
+            printf("기능 2\n");
+            break;
+        case '3':
+            printf("기능 3\n");
+            break;
+        case '4':
+            printf("기능 4\n");
+            break;
+        case '5':
+            printf("기능 5\n");
+            break;
+        case '0':
+            run = 0;
+            break;
+        }
+    }
 }
